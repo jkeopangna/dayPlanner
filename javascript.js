@@ -43,29 +43,13 @@ console.log(save);
 
 // })
 
-document.addEventListener("click", function(event) {
-    event.preventDefault();
-    var entry = document.querySelectorAll('.task');
-    localStorage.setItem("input", entry);
+$('.saveBtn').on("click", function() {
+  var entry = $(this).siblings('.task').val()
+    var time = $(this).siblings().attr('data-time')
+localStorage.setItem(time, entry);
+localStorage.getItem('.task', 'data-time');
     }
   );
   
-
-// save.addEventListener('click', function() 
-//     {
-// var entry = document.querySelectorAll('.task');
-// console.log(entry);
-// localStorage.setItem('input', JSON.stringify(entry));
-
-// });
-
-
-// var lastEntry = JSON.parse(localStorage.getitem('input'));
-
-// document.getElementsByClassName('saveBtn').addEventListener('click', saveEntry);
-
-// function saveEntry(){
-//     localStorage.setItem(entry)
-// }
-
-// saveEntry()
+ 
+$('#9AM .task').val(localStorage.getItem('.task'))
