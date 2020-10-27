@@ -1,6 +1,12 @@
-
-var currentHour = moment().format('h')
-console.log(currentHour);
+///////////////// Global Variables ////////////////////
+var time = moment().format('h');
+console.log(time);
+var past = moment().format('9:00');
+console.log(past)
+var future = moment().format('5:00');
+console.log(future);
+var currentHour = document.getElementsByTagName('textarea')
+console.log(currentHour)
 var today = moment().format('dddd, MMMM Do YYYY');
 console.log(today);
 document.getElementById('currentDay').innerHTML = today
@@ -8,48 +14,38 @@ var save = document.getElementsByClassName('saveBtn')
 console.log(save);
 
 
-////////////////////////////////////////////////////////////////
+////////////////////Time Function//////////////////////
 
-    //current hour = currentHour
+function timeBlock() {
+if (past < time) {
+  $(currentHour).addClass('.past')
+} else if (past = time) {
+  $(currentHour).addClass('.current')
+} if (time < future) {
+  $(currentHour).addClass('.future')
+} else if (future = time) {
+  $(currentHour).addClass('.current')
+}
+}
+
+timeBlock();
+
+//current hour = currentHour
     //get the hour for each inputfield $(this).getAttribute
     // is this current input field = > or < the current time
     // add the appropiate class
     // Set data value/id to each input field to compare to currentHour
 
 
-// function timeBlock()
-// console.log(currentHour)
-// $('.task').each(function(index){
-//     console.log($(this));
-//     if ( < currentHour) {
-//         $(this).addClass('current')
-//     }
+////////////////////Local Storage//////////////////////
 
-// })
-// }
-// timeBlock();
-
-
-//////////////////////////////////////////////////////////////
-
-
-// add your event listners and get to console.log the value of the related input
-
-// $(save).click(function(saveData) {
-// // var entry = document.querySelectorAll('.task');
-// var saveEntry = localStorage.getElementsByClassName('task')
-// console.log(saveEntry);
-// localStorage.setItem('input', JSON.stringify(entry));
-
-// })
 
 $('.saveBtn').on("click", function() {
   var entry = $(this).siblings('.task').val()
     var time = $(this).siblings().attr('data-time')
 localStorage.setItem(time, entry);
 localStorage.getItem('.task', 'data-time');
-    }
-  );
+    });
   
  
 $('#9AM .task').val(localStorage.getItem('.task'))

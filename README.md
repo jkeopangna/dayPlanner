@@ -6,3 +6,6 @@ JQuery and Javascript libraries allow developers to use particular functions fro
 - Each time block is color-coded based on past, present, and future events.
 
 The image and link provided below will demonstrate the functions of the daily planner:
+
+[Workday Planner](https://jkeopangna.github.io/dayPlanner/)
+![Planner](Assets/preview.jpg)
